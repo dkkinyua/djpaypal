@@ -1,15 +1,19 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'core/main.css' %}">
     <title>Django Store</title>
 </head>
 <body>
     <ul class="products">
         {% for product in products %}
-            <li>
-                {{ product.title }} - {{ product.price }}
+            <li class="product">
+                <h2>{{ product.description }}</h2>
+                <h5>{{ product.price }}</h5>
+                <a href="{% url 'core:checkout' product.id %}"><button class="btn">Proceed to checkout here</button></a>
             </li>
         {% endfor %}
     </ul>

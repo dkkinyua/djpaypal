@@ -1,0 +1,14 @@
+.products {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.product {
+    padding: 20px;
+}
+
+.btn {
+    padding: 5px;
+    color: black;
+}
