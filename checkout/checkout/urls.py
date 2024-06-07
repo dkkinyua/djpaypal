@@ -20,4 +20,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include('core.urls')), # URLConf for the 'core' app
+    path("", include('paypal.standard.ipn.urls')), # URLConf for 'paypal.standard' app
 ]
