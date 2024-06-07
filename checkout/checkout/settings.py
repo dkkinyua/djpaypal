@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+
+# loads what's on the .env file
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -125,6 +130,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Paypal App Configurations
-PAYPAL_RECEIVER_EMAIL = 'business@example.com'
+PAYPAL_RECEIVER_EMAIL = os.getenv('RECEIVER_EMAIL')
 PAYPAL_TEST = True
 
