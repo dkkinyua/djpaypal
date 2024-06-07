@@ -11,6 +11,7 @@
     <ul class="products">
         {% for product in products %}
             <li class="product">
+                <img src="{{ product.image }}" alt="{{ product.title }}">
                 <h2>{{ product.description }}</h2>
                 <h5>{{ product.price }}</h5>
                 <a href="{% url 'core:checkout' product.id %}"><button class="btn">Proceed to checkout here</button></a>

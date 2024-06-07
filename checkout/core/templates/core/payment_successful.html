@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful!</title>
+</head>
+<body>
+    <h1>Your payment for {{ product.title }}, {{ product.price }} has been approved.</h1>
+    <a href="{% url 'core:index'%}"><button class="btn">Get back to home page</button></a>
+</body>
+</html>
