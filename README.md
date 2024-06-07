@@ -5,7 +5,7 @@ This Django application demonstrates integration with PayPal for handling paymen
 To open a test merchant account, go to *https://sandbox.paypal.com* and select the *'Business Account'* to create one.
 to create a test personal account, go to *https://sandbox.paypal.com* and select the *'Personal Account'* to create one.
 
-## Installation
+## Procedure
 
 1. Clone the repository:
    ```bash
