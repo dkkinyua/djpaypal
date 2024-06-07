@@ -6,7 +6,7 @@
     <title>Payment Successful!</title>
 </head>
 <body>
-    <h1>Your payment for {{ product.title }}, {{ product.price }} has been approved.</h1>
+    <h3>Your payment for {{ product.title }}, for amount ${{ product.price }} has been approved.</h3>
     <a href="{% url 'core:index'%}"><button class="btn">Get back to home page</button></a>
 </body>
 </html>
