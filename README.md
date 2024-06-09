@@ -5,7 +5,7 @@ This Django application demonstrates integration with PayPal for handling paymen
 To open a test merchant account, go to *https://sandbox.paypal.com* and select the *'Business Account'* to create one.
 to create a test personal account, go to *https://sandbox.paypal.com* and select the *'Personal Account'* to create one.
 
-## Procedure
+## Installation
 
 1. Clone the repository:
    ```bash
@@ -97,7 +97,7 @@ def checkout(request, product_id):
     }
 
 ```
-7. After creating the above dictionary, create a variable paypal_payment. This variable automatically loads the paypal_checkout dictionary into a form which is PayPalPaymentsForm. Add the paypal_payment variable into the context dictionary to render it to the frontend.
+7. After creating the above dictionary, create a variable paypal_payment. This variable automatically loads the paypal_checkout dictionary into a form which is PayPalPaymentsForm. Add the paypal_payment variable into the context dictionary to render it to the front end.
 
 ```python
 
@@ -117,8 +117,30 @@ context = {
 | Endpoint    | Description |
 | ----------- | ----------- |
 | 1. 'checkout/<<int:product_id>>'   | This URL endpoint directs the user to the 'checkout' page|
-| 2. 'payment-success/<<int:product_id>>'   |This URL endpoint is triggered when payment is successful|
-| 3. 'payment-failed/<<int:product_id>>'   | This URL endpoint is when a payment process fails|
-| 4. '/'   | Index page of the website|
+| 1. 'payment-success/<<int:product_id>>'   |This URL endpoint is triggered when payment is successful|
+| 1. 'payment-failed/<<int:product_id>>'   | This URL endpoint is when a payment process fails|
+| 1. '/'   | Index page of the website|
 
-# Feel free to clone this project, contribute to it too!
+# Important: Security Measures and best practices to take while integrating payments.
+
+Use the methods below to secure customers' data and sensitive info while they are paying on your application.
+- Use HTTPS to secure your web application:
+Using an SSL certificate for your website protects the user data from being in danger. Before using an SSL certificate, the URL would look like so, *http://www.payments.example.com*. After securing your application with one, it changes to *https://www.payments.example.com*.
+
+- Validating webhooks.
+- Securing API credentials: This has already been done in this project. Using a .env folder to avoid exposing sensitive data import them using Python's ```os``` and ```dotenv``` and add your file's name in the .gitignore file.
+- CSRF Protection: When using templates, use the ```{% csrf_token %}``` method on top of your form to add CSRF protection to your forms and add a layer of protection as shown below:
+```html
+
+<div class='form'>
+    <form action='post' action='{% url "core:payment" product.id %}'>
+        {% csrf_token %}
+        <!-- Form details here -->
+    </form>
+</div>
+
+```
+- Payment Amount Validation.
+
+# Contribution
+Feel free to clone this project, contribute to it too!
