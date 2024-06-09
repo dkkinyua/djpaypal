@@ -116,9 +116,9 @@ context = {
 **Endpoints and Descriptions**
 | Endpoint    | Description |
 | ----------- | ----------- |
-| 1. 'checkout/<int:product_id>'   | This URL endpoint directs the user to the 'checkout' page|
-| 2. 'payment-success/<int:product_id>'   |This URL endpoint is triggered when payment is successful|
-| 3. 'payment-failed/<int:product_id>'   | This URL endpoint is when a payment process fails|
+| 1. 'checkout/<<int:product_id>>'   | This URL endpoint directs the user to the 'checkout' page|
+| 2. 'payment-success/<<int:product_id>>'   |This URL endpoint is triggered when payment is successful|
+| 3. 'payment-failed/<<int:product_id>>'   | This URL endpoint is when a payment process fails|
 | 4. '/'   | Index page of the website|
 
 # Feel free to clone this project, contribute to it too!
